@@ -48,7 +48,7 @@ vendors:
 # 自定义样式
 customStyles:
   images: # 图片相关设置
-    banner: /images/bg.png # 站点横幅
+    banner: /images/wxjb.webp # 站点横幅
     background: /images/bg.webp # 站点背景
 
 # Index 首页配置
@@ -180,7 +180,7 @@ widgets:
 - category
 - tagcloud
 - posts
-avatarUri: /images/logo/800.jpg
+avatarUri: /images/logo/logo.webp
 mobile_toc: 
   hide: false
   hide_id: false
