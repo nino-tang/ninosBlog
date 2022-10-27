@@ -104,3 +104,8 @@ theme: kratos-rebirth
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+  # Markdown-it config
+#markdown: 'zero'
+#markdown: 'default'
+# markdown: 'commonmark'
