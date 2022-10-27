@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/ninoLOG.png">
+  
+  <title>Node.js安装与配置（详细步骤） | nino&#39;sBlog</title>
+  <meta name="author" content="John Doe" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="安装" />
+  
+  <meta name="description" content="[TOC] 一、安装Node.js1.下载Node.js官网下载根据自身系统下载对应的安装包（我这里为Windows11 64位，故选择下载第一个安装包）  2.安装双击安装包，点击Next，勾选使用许可协议，点击Next，选择安装位置（可根据个人情况更换路径，我这里选择安装在E:\devTools\nodejs）  继续点击Next，点击Next，点击Install，点击Finish完成安装。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node.js安装与配置（详细步骤）">
+<meta property="og:url" content="http://example.com/2022/09/24/Node.js%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%EF%BC%88%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4%EF%BC%89/index.html">
+<meta property="og:site_name" content="nino&#39;sBlog">
+<meta property="og:description" content="[TOC] 一、安装Node.js1.下载Node.js官网下载根据自身系统下载对应的安装包（我这里为Windows11 64位，故选择下载第一个安装包）  2.安装双击安装包，点击Next，勾选使用许可协议，点击Next，选择安装位置（可根据个人情况更换路径，我这里选择安装在E:\devTools\nodejs）  继续点击Next，点击Next，点击Install，点击Finish完成安装。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/ninoLOG.png">
+<meta property="article:published_time" content="2022-09-24T13:52:45.000Z">
+<meta property="article:modified_time" content="2022-10-13T03:15:14.282Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="安装">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/ninoLOG.png">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" media="all"></script>
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-color-dark.min.css" media="(prefers-color-scheme: dark)"></script>
+    <script src="/js/kr-dark.min.js"></script>
+  
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" media="all"></script>
+  
+  
+  <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></script>
+  <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></script>
+  
+  
+  
+    <link rel="stylesheet" href="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"></script>
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="/vendors/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+    <script src="/vendors/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+  
+  <style>
+    
+      .kratos-cover.kratos-cover-2 {
+        background-image: url('https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/wxjb.webp');
+      }
+    
+    
+      @media(min-width:768px) {
+        body.custom-background {
+          background-image: url('/images/bg.webp');
+        }
+      }
+    
+  </style>
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <header id="kratos-desktop-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="nav-header">
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <header id="kratos-mobile-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="color-logo"><a href="/">nino&#39;sBlog</a></div>
+                    <div class="nav-toggle">
+                        <a class="kratos-nav-toggle js-kratos-nav-toggle">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>nino&#39;sBlog</h2> <br />
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
+
+        
+
+            <section class="col-md-8">
+
+        
+
+            <article itemscope itemtype="https://schema.org/Article">
+    
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/24/Node.js%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%EF%BC%88%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4%EF%BC%89/">
+    <div class="kratos-hentry kratos-post-inner clearfix">
+        <header class="kratos-entry-header">
+            
+                <h1 class="kratos-entry-title text-center" itemprop="name headline">Node.js安装与配置（详细步骤）</h1>
+            
+            
+            <ul class="kratos-post-meta text-center">
+                <li><time datetime="2022-09-24T13:52:45.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2022-09-24</time></li>
+                <li itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <i class="fa fa-user"></i> 作者 <span itemprop="name">John Doe</span>
+                </li>
+                <li>
+                    <i class="fa fa-edit"></i> 
+                    
+                    
+                        ~2.32K
+                    
+                    字
+                </li>
+                
+            </ul>
+        </header>
+        <div class="kratos-post-content">
+            
+            <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                <div class="icon"><i class="fa fa-warning"></i></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1665630914282"></time> 前，其中的内容可能需要更新。</p></div>
+            </div>
+            
+            
+                <div class="kratos-post-inner-toc">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%AE%89%E8%A3%85Node-js"><span class="toc-number">1.</span> <span class="toc-text">一、安装Node.js</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%B8%8B%E8%BD%BD"><span class="toc-number">1.1.</span> <span class="toc-text">1.下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85"><span class="toc-number">1.2.</span> <span class="toc-text">2.安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%B7%BB%E5%8A%A0%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">1.3.</span> <span class="toc-text">3.添加环境变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E8%BF%9B%E5%85%A5%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%EF%BC%8C%E7%BC%96%E8%BE%91%E3%80%90%E7%B3%BB%E7%BB%9F%E5%8F%98%E9%87%8F%E3%80%91%E4%B8%8B%E7%9A%84%E5%8F%98%E9%87%8F%E3%80%90Path%E3%80%91"><span class="toc-number">1.3.1.</span> <span class="toc-text">3.1 进入环境变量，编辑【系统变量】下的变量【Path】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E6%B7%BB%E5%8A%A0Node-js%E7%9A%84%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84%EF%BC%88%E6%AD%A4%E5%A4%84%E4%B8%BAE-devTools-nodejs-%EF%BC%89"><span class="toc-number">1.3.2.</span> <span class="toc-text">3.2 添加Node.js的安装路径（此处为E:\devTools\nodejs\）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E9%AA%8C%E8%AF%81%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F"><span class="toc-number">2.</span> <span class="toc-text">二、验证是否安装成功</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BF%AE%E6%94%B9%E6%A8%A1%E5%9D%97%E4%B8%8B%E8%BD%BD%E4%BD%8D%E7%BD%AE"><span class="toc-number">3.</span> <span class="toc-text">三、修改模块下载位置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%9F%A5%E7%9C%8Bnpm%E9%BB%98%E8%AE%A4%E5%AD%98%E6%94%BE%E4%BD%8D%E7%BD%AE"><span class="toc-number">3.1.</span> <span class="toc-text">1.查看npm默认存放位置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%9C%A8-nodejs-%E5%AE%89%E8%A3%85%E7%9B%AE%E5%BD%95%E4%B8%8B%EF%BC%8C%E5%88%9B%E5%BB%BA-%E2%80%9Cnode-global%E2%80%9D-%E5%92%8C-%E2%80%9Cnode-cache%E2%80%9D-%E4%B8%A4%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-number">3.2.</span> <span class="toc-text">2.在 nodejs 安装目录下，创建 “node_global” 和 “node_cache” 两个文件夹</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-number">3.3.</span> <span class="toc-text">3.修改默认文件夹</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%B5%8B%E8%AF%95%E9%BB%98%E8%AE%A4%E4%BD%8D%E7%BD%AE%E6%98%AF%E5%90%A6%E6%9B%B4%E6%94%B9%E6%88%90%E5%8A%9F"><span class="toc-number">3.4.</span> <span class="toc-text">4.测试默认位置是否更改成功</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E8%AE%BE%E7%BD%AE%E6%B7%98%E5%AE%9D%E9%95%9C%E5%83%8F"><span class="toc-number">4.</span> <span class="toc-text">四、设置淘宝镜像</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%B0%86npm%E9%BB%98%E8%AE%A4%E7%9A%84registry%E4%BF%AE%E6%94%B9%E4%B8%BA%E6%B7%98%E5%AE%9Dregistry"><span class="toc-number">4.1.</span> <span class="toc-text">1.将npm默认的registry修改为淘宝registry</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E4%BD%BF%E7%94%A8%E7%9A%84%E9%95%9C%E5%83%8F%E8%B7%AF%E5%BE%84"><span class="toc-number">4.1.1.</span> <span class="toc-text">1.1 查看当前使用的镜像路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E6%9B%B4%E6%8D%A2npm%E4%B8%BA%E6%B7%98%E5%AE%9D%E9%95%9C%E5%83%8F"><span class="toc-number">4.1.2.</span> <span class="toc-text">1.2 更换npm为淘宝镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E6%A3%80%E6%9F%A5%E9%95%9C%E5%83%8F%E6%98%AF%E5%90%A6%E9%85%8D%E7%BD%AE%E6%88%90%E5%8A%9F"><span class="toc-number">4.1.3.</span> <span class="toc-text">1.3 检查镜像是否配置成功</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85%E5%9F%BA%E4%BA%8E%E6%B7%98%E5%AE%9D%E6%BA%90%E7%9A%84cnpm"><span class="toc-number">4.2.</span> <span class="toc-text">2.全局安装基于淘宝源的cnpm</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85%E5%9F%BA%E4%BA%8E%E6%B7%98%E5%AE%9D%E6%BA%90%E7%9A%84cnpm"><span class="toc-number">4.2.1.</span> <span class="toc-text">2.1 全局安装基于淘宝源的cnpm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E6%9C%AC%E5%9C%B0%E6%9F%A5%E7%9C%8Bcnpm%E6%A8%A1%E5%9D%97"><span class="toc-number">4.2.2.</span> <span class="toc-text">2.2 本地查看cnpm模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4%E6%9F%A5%E7%9C%8Bcnpm%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F"><span class="toc-number">4.2.3.</span> <span class="toc-text">2.3 执行命令查看cnpm是否安装成功</span></a></li></ol></li></ol></li></ol>
+                </div>
+            
+            <hr />
+            <div itemprop="articleBody"><p>[TOC]</p>
+<h1 id="一、安装Node-js"><a href="#一、安装Node-js" class="headerlink" title="一、安装Node.js"></a>一、安装Node.js</h1><h2 id="1-下载"><a href="#1-下载" class="headerlink" title="1.下载"></a>1.下载</h2><p><a target="_blank" rel="noopener" href="http://nodejs.cn/download/">Node.js官网下载</a><br>根据自身系统下载对应的安装包（我这里为Windows11 64位，故选择下载第一个安装包）</p>
+<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/914dfb1bae004d71bab1d7cc2c01a671.png" alt="在这里插入图片描述"></p>
+<h2 id="2-安装"><a href="#2-安装" class="headerlink" title="2.安装"></a>2.安装</h2><p>双击安装包，点击Next，勾选使用许可协议，点击Next，选择安装位置（可根据个人情况更换路径，我这里选择安装在E:\devTools\nodejs）</p>
+<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/493dfc78735841f395c4a116898f5c6f.png" alt="在这里插入图片描述"></p>
+<p>继续点击Next，点击Next，点击Install，点击Finish完成安装。</p>
+<h2 id="3-添加环境变量"><a href="#3-添加环境变量" class="headerlink" title="3.添加环境变量"></a>3.添加环境变量</h2><h3 id="3-1-进入环境变量，编辑【系统变量】下的变量【Path】"><a href="#3-1-进入环境变量，编辑【系统变量】下的变量【Path】" class="headerlink" title="3.1 进入环境变量，编辑【系统变量】下的变量【Path】"></a>3.1 进入环境变量，编辑【系统变量】下的变量【Path】</h3><p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/d128a4fe1ce34016b08a2842cde77166.png" alt="选择Path变量"></p>
+<h3 id="3-2-添加Node-js的安装路径（此处为E-devTools-nodejs-）"><a href="#3-2-添加Node-js的安装路径（此处为E-devTools-nodejs-）" class="headerlink" title="3.2 添加Node.js的安装路径（此处为E:\devTools\nodejs\）"></a>3.2 添加Node.js的安装路径（此处为E:\devTools\nodejs\）</h3><p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/4609bccc18d8419ea764fb0153454ca9.png" alt="写入Node.js安装路径"></p>
+<h1 id="二、验证是否安装成功"><a href="#二、验证是否安装成功" class="headerlink" title="二、验证是否安装成功"></a>二、验证是否安装成功</h1><p>进入cmd命令行窗口，输入node -v查看nodejs版本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
+
+<p>输入npm -v查看npm版本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+
+<p>如下图所示，即为安装成功：</p>
+<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/ff513962ea164d019d3a9d542d26f0ba.png" alt="验证是否安装成功"></p>
+<h1 id="三、修改模块下载位置"><a href="#三、修改模块下载位置" class="headerlink" title="三、修改模块下载位置"></a>三、修改模块下载位置</h1><p><span style="color:yellow;background:red"><strong>此步骤修改以后npm全局下载模块的保存位置，可根据自身情况选择是否更改。</strong></span></p>
+<h2 id="1-查看npm默认存放位置"><a href="#1-查看npm默认存放位置" class="headerlink" title="1.查看npm默认存放位置"></a>1.查看npm默认存放位置</h2><p>使用npm get prefix查看npm全局模块的存放路径</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm get prefix</span><br></pre></td></tr></table></figure>
+
+
+<p>使用npm get cache查看npm缓存默认存放路径</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm get cache</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/e21684575b404a7f87f83572f8df3d4c.png" alt="在这里插入图片描述"></p>
+<p>如上图所示，npm 全局模块存放位置以及cache的存放位置，默认是在 C 盘 “C:\Users\用户\AppData” 下。</p>
+<h2 id="2-在-nodejs-安装目录下，创建-“node-global”-和-“node-cache”-两个文件夹"><a href="#2-在-nodejs-安装目录下，创建-“node-global”-和-“node-cache”-两个文件夹" class="headerlink" title="2.在 nodejs 安装目录下，创建 “node_global” 和 “node_cache” 两个文件夹"></a>2.在 nodejs 安装目录下，创建 “node_global” 和 “node_cache” 两个文件夹</h2><p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/e9847471a84c45ddb1fc416a223cdb55.png" alt="在这里插入图片描述"></p>
+<h2 id="3-修改默认文件夹"><a href="#3-修改默认文件夹" class="headerlink" title="3.修改默认文件夹"></a>3.修改默认文件夹</h2><p>设置全局模块的安装路径到 “node_global” 文件夹，</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set prefix &quot;E:\devTools\nodejs\node_global&quot;</span><br></pre></td></tr></table></figure>
+
+<p>设置缓存到 “node_cache” 文件夹</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set cache &quot;E:\devTools\nodejs\node_cache&quot;</span><br></pre></td></tr></table></figure>
+
+
+<p>如下图所示：</p>
+<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/6e67a30770ff40c49f640007f96703d1.png" alt="在这里插入图片描述"></p>
+<p><span style ="color:red"><strong>注意：</strong></span>由于 node 全局模块大多数都是可以通过命令行访问的，还要把【node_global】的路径“E:\devTools\nodejs\node_global”加入到【系统变量 】下的【PATH】 变量中，方便直接使用命令行运行，如下图所示：</p>
+<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/bb96741ac93447aba9e65f0a184e3d11.png" alt="在这里插入图片描述"></p>
+<h2 id="4-测试默认位置是否更改成功"><a href="#4-测试默认位置是否更改成功" class="headerlink" title="4.测试默认位置是否更改成功"></a>4.测试默认位置是否更改成功</h2><p>经过上面的步骤，nodejs下载的模块就会自动下载到我们自定义的目录，接下来我们测试一下是否更改成功。输入下面的命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express -g</span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express --global</span><br></pre></td></tr></table></figure>
+
+<p><span style="color:red"><strong>注意：</strong></span>“-g”等同于“–global”，“-g” 是全局安装，不加“-g”就是默认下载到当前目录。“-g” 表示安装到之前设置的【node_global】目录下，同时nodejs会自动地在node_global文件夹下创建【node_modules】子文件夹， 即自动下载到“E:\devTools\nodejs\node_global\node_modules” 路径下。</p>
+<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/e05642e304a443ec85794f2ac3bad6a8.png" alt="在这里插入图片描述">如上图所示，下载express模块成功，然后在文件管理器中查看是否保存到上面自定义的路径下。</p>
+<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/d460d0cd30884a83bb175a6e6127aeca.png" alt="在这里插入图片描述">可以看到，express模块已经成功地下载到【E:\devTools\nodejs\node_global\node_modules】下。</p>
+<p><span style="color:red"><strong>注意：</strong></span>若执行命令npm install express -g出现如下报错：</p>
+<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/6caaa64529e0401aa2d467a8a5ceec22.png" alt="在这里插入图片描述"></p>
+<p>是由于对文件夹操作的权限不够，右击Nodejs文件夹-&gt;属性-&gt;安全，点击编辑，将所有权限都✔即可。</p>
+<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/d1a6f84379d3443bad6af4c734e169d7.png" alt="在这里插入图片描述"></p>
+<p>※执行npm install express -g仍然出错的话继续将nodejs下【node_cache】、【node_global】、【node_modules】这三个文件夹的所有权限勾选，再次执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install express -g</span><br><span class="line">即可下载成功。</span><br></pre></td></tr></table></figure>
+
+<h1 id="四、设置淘宝镜像"><a href="#四、设置淘宝镜像" class="headerlink" title="四、设置淘宝镜像"></a>四、设置淘宝镜像</h1><h2 id="1-将npm默认的registry修改为淘宝registry"><a href="#1-将npm默认的registry修改为淘宝registry" class="headerlink" title="1.将npm默认的registry修改为淘宝registry"></a>1.将npm默认的registry修改为淘宝registry</h2><p>说明：npm 默认的 registry ,也就是下载 npm 包时会从国外的服务器下载，国内下载会很慢，一般更换为淘宝镜像：<a target="_blank" rel="noopener" href="https://registry.npm.taobao.org./">https://registry.npm.taobao.org。</a></p>
+<h3 id="1-1-查看当前使用的镜像路径"><a href="#1-1-查看当前使用的镜像路径" class="headerlink" title="1.1 查看当前使用的镜像路径"></a>1.1 查看当前使用的镜像路径</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config get registry</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/ef81e85548b74e06bc325a27a9914258.png" alt="在这里插入图片描述"></p>
+<h3 id="1-2-更换npm为淘宝镜像"><a href="#1-2-更换npm为淘宝镜像" class="headerlink" title="1.2 更换npm为淘宝镜像"></a>1.2 更换npm为淘宝镜像</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https://registry.npm.taobao.org/</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-检查镜像是否配置成功"><a href="#1-3-检查镜像是否配置成功" class="headerlink" title="1.3 检查镜像是否配置成功"></a>1.3 检查镜像是否配置成功</h3><p>再次执行npm config get registry，检查当前的镜像路径：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config get registry</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/5e6a5bd3b935462fb2521db2d9ea2577.png" alt="在这里插入图片描述"></p>
+<p>如上图所示，npm默认的registry已修改为淘宝registry。</p>
+<h2 id="2-全局安装基于淘宝源的cnpm"><a href="#2-全局安装基于淘宝源的cnpm" class="headerlink" title="2.全局安装基于淘宝源的cnpm"></a>2.全局安装基于淘宝源的cnpm</h2><p>说明：由于npm的服务器在海外，所以访问速度比较慢，访问不稳定 ，cnpm的服务器是由淘宝团队提供，服务器在国内，cnpm是npm镜像，一般会同步更新，相差在10分钟，所以cnpm在安装一些软件时候会比较有优势。但是cnpm一般只用于模块安装，在项目创建与卸载等相关操作时仍使用npm。</p>
+<h3 id="2-1-全局安装基于淘宝源的cnpm"><a href="#2-1-全局安装基于淘宝源的cnpm" class="headerlink" title="2.1 全局安装基于淘宝源的cnpm"></a>2.1 全局安装基于淘宝源的cnpm</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/b1247b4bd75d4e128914eba35e2ed91f.png" alt="在这里插入图片描述"></p>
+<h3 id="2-2-本地查看cnpm模块"><a href="#2-2-本地查看cnpm模块" class="headerlink" title="2.2 本地查看cnpm模块"></a>2.2 本地查看cnpm模块</h3><p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/d9dddf1705e84f5990b2062db823cde4.png" alt="在这里插入图片描述"></p>
+<h3 id="2-3-执行命令查看cnpm是否安装成功"><a href="#2-3-执行命令查看cnpm是否安装成功" class="headerlink" title="2.3 执行命令查看cnpm是否安装成功"></a>2.3 执行命令查看cnpm是否安装成功</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm -v</span><br></pre></td></tr></table></figure>
+
+<p>如下图所示，即代表cnpm配置成功。</p>
+<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/a73fe1fb625b45ef9a04765a1e46fbae.png" alt="在这里插入图片描述"></p>
+</div>
+        </div>
+        
+            <div class="kratos-copyright text-center clearfix">
+                <h5 itemprop="copyrightNotice">本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+            </div>
+        
+        <footer class="kratos-entry-footer clearfix">
+            
+                <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                
+                
+                    <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                    <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "http://example.com/2022/09/24/Node.js%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%EF%BC%88%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4%EF%BC%89/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "http://example.com/2022/09/24/Node.js%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%EF%BC%88%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4%EF%BC%89/";
+            const title         = "「Node.js安装与配置（详细步骤）」";
+            const excerpt       = `[TOC]
+一、安装Node.js1.下载Node.js官网下载根据自身系统下载对应的安装包（我这里为Windows11 64位，故选择下载第一个安装包）
+
+2.安装双击安装包，点击Next，勾选使用许可协议，点击Next，选择安装位...`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                
+                </div>
+            
+            <div class="footer-tag clearfix">
+                <div class="pull-left">
+                <i class="fa fa-tags"></i>
+                    <a class="tag-none-link" href="/tags/%E5%AE%89%E8%A3%85/" rel="tag">安装</a>
+                </div>
+                <div class="pull-date">
+                    <time datetime="2022-10-13T03:15:14.282Z" itemprop="dateModified">最后编辑：2022-10-13</time>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+        <nav class="navigation post-navigation clearfix" role="navigation">
+            
+            <div class="nav-previous clearfix">
+                <a title=" hexo+github搭建博客" href="/2022/09/24/hexo+github搭建博客/">&lt; 上一篇</a>
+            </div>
+            
+            
+            <div class="nav-next clearfix">
+                <a title=" Hello World" href="/2022/10/13/hello-world/">下一篇 &gt;</a>
+            </div>
+            
+        </nav>
+    
+    
+</article>
+
+        
+
+            </section>
+
+        
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/logo.webp" loading="lazy" decoding="auto" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center">ninosBlog</p>
+    </div>
+    <div class="site-meta">
+        <a class="meta-item" href="/archives/">
+            <span class="title">
+                文章
+            </span>
+            <span class="count">
+                4
+            </span>
+        </a>
+        <a class="meta-item" href="/categories/">
+            <span class="title">
+                分类
+            </span>
+            <span class="count">
+                4
+            </span>
+        </a>
+        <a class="meta-item" href="/tags/">
+            <span class="title">
+                标签
+            </span>
+            <span class="count">
+                2
+            </span>
+        </a>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix">
+    <div class="photo-background"></div>
+    <h4 class="widget-title no-after">
+        <i class="fa fa-compass"></i>
+        文章目录
+        <span class="toc-progress-bar" role="progressbar" aria-label="阅读进度："></span>
+    </h4>
+    <div class="textwidget">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%AE%89%E8%A3%85Node-js"><span class="toc-text">一、安装Node.js</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%B8%8B%E8%BD%BD"><span class="toc-text">1.下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85"><span class="toc-text">2.安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%B7%BB%E5%8A%A0%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-text">3.添加环境变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E8%BF%9B%E5%85%A5%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%EF%BC%8C%E7%BC%96%E8%BE%91%E3%80%90%E7%B3%BB%E7%BB%9F%E5%8F%98%E9%87%8F%E3%80%91%E4%B8%8B%E7%9A%84%E5%8F%98%E9%87%8F%E3%80%90Path%E3%80%91"><span class="toc-text">3.1 进入环境变量，编辑【系统变量】下的变量【Path】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E6%B7%BB%E5%8A%A0Node-js%E7%9A%84%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84%EF%BC%88%E6%AD%A4%E5%A4%84%E4%B8%BAE-devTools-nodejs-%EF%BC%89"><span class="toc-text">3.2 添加Node.js的安装路径（此处为E:\devTools\nodejs\）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E9%AA%8C%E8%AF%81%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F"><span class="toc-text">二、验证是否安装成功</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BF%AE%E6%94%B9%E6%A8%A1%E5%9D%97%E4%B8%8B%E8%BD%BD%E4%BD%8D%E7%BD%AE"><span class="toc-text">三、修改模块下载位置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%9F%A5%E7%9C%8Bnpm%E9%BB%98%E8%AE%A4%E5%AD%98%E6%94%BE%E4%BD%8D%E7%BD%AE"><span class="toc-text">1.查看npm默认存放位置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%9C%A8-nodejs-%E5%AE%89%E8%A3%85%E7%9B%AE%E5%BD%95%E4%B8%8B%EF%BC%8C%E5%88%9B%E5%BB%BA-%E2%80%9Cnode-global%E2%80%9D-%E5%92%8C-%E2%80%9Cnode-cache%E2%80%9D-%E4%B8%A4%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-text">2.在 nodejs 安装目录下，创建 “node_global” 和 “node_cache” 两个文件夹</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-text">3.修改默认文件夹</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%B5%8B%E8%AF%95%E9%BB%98%E8%AE%A4%E4%BD%8D%E7%BD%AE%E6%98%AF%E5%90%A6%E6%9B%B4%E6%94%B9%E6%88%90%E5%8A%9F"><span class="toc-text">4.测试默认位置是否更改成功</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E8%AE%BE%E7%BD%AE%E6%B7%98%E5%AE%9D%E9%95%9C%E5%83%8F"><span class="toc-text">四、设置淘宝镜像</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%B0%86npm%E9%BB%98%E8%AE%A4%E7%9A%84registry%E4%BF%AE%E6%94%B9%E4%B8%BA%E6%B7%98%E5%AE%9Dregistry"><span class="toc-text">1.将npm默认的registry修改为淘宝registry</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E4%BD%BF%E7%94%A8%E7%9A%84%E9%95%9C%E5%83%8F%E8%B7%AF%E5%BE%84"><span class="toc-text">1.1 查看当前使用的镜像路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E6%9B%B4%E6%8D%A2npm%E4%B8%BA%E6%B7%98%E5%AE%9D%E9%95%9C%E5%83%8F"><span class="toc-text">1.2 更换npm为淘宝镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E6%A3%80%E6%9F%A5%E9%95%9C%E5%83%8F%E6%98%AF%E5%90%A6%E9%85%8D%E7%BD%AE%E6%88%90%E5%8A%9F"><span class="toc-text">1.3 检查镜像是否配置成功</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85%E5%9F%BA%E4%BA%8E%E6%B7%98%E5%AE%9D%E6%BA%90%E7%9A%84cnpm"><span class="toc-text">2.全局安装基于淘宝源的cnpm</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85%E5%9F%BA%E4%BA%8E%E6%B7%98%E5%AE%9D%E6%BA%90%E7%9A%84cnpm"><span class="toc-text">2.1 全局安装基于淘宝源的cnpm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E6%9C%AC%E5%9C%B0%E6%9F%A5%E7%9C%8Bcnpm%E6%A8%A1%E5%9D%97"><span class="toc-text">2.2 本地查看cnpm模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4%E6%9F%A5%E7%9C%8Bcnpm%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F"><span class="toc-text">2.3 执行命令查看cnpm是否安装成功</span></a></li></ol></li></ol></li></ol>
+    </div>
+</aside>
+                
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/java/">java</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/">安装文档</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/">博客相关</a><span class="category-list-count">1</span></li></ul></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/java/" style="font-size: 0.6em;">java</a> <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 0.8em;">安装</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2022/10/27/java%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/"><i class="fa  fa-book"></i> java基础笔记</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/10/13/hello-world/"><i class="fa  fa-book"></i> Hello World</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/09/24/Node.js%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%EF%BC%88%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4%EF%BC%89/"><i class="fa  fa-book"></i> Node.js安装与配置（详细步骤）</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/09/24/hexo+github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"><i class="fa  fa-book"></i> hexo+github搭建博客</a>
+            
+          
+        
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://t.me/CandyUnion"><i class="fa fa-telegram"></i></a></li>
+                        
+                        
+                        
+                        <li><a target="_blank" rel="me" href="https://nya.one/@Candinya"><i class="fa fa fa-share-alt-square"></i></a></li>
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/Candinya"><i class="fa fa-github"></i></a></li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2022 nino'sBlog 版权所有.</li>
+                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by John Doe.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="/vendors/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="/vendors/nprogress@0.2.0/nprogress.js"></script>
+<script>
+    if (!window.kr) {
+        window.kr = {};
+    }
+    window.kr.notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));
+    window.kr.siteRoot = "/";
+</script>
+
+
+    <script async src="/js/candy.min.js"></script>
+
+
+
+
+    <script defer src="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="/vendors/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+
+<!-- Extra support for third-party plguins  -->
+
+
+    </body>
+</html>

@@ -10,6 +10,10 @@ tags: java
 pic:
 ---
 
+[TOC]
+
+
+
 #   java基础
 
 这是快速复习java基础的笔记
@@ -3896,6 +3900,8 @@ System.out.print(xxx);
 
 ![image-20220324141333874](https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/image-20220324141333874.png)
 
+
+
 # 面向对象（高级）
 
 ## 类变量和类方法
@@ -5179,6 +5185,8 @@ private static String name = "zhangsan";
    ```
 
 7. 如果外部类和静态内部类的成员重名时，静态内部访问的时候，默认遵循就近原则，如果想访问外部类的成员，则可以使用（外部类名.成员）去访问
+
+
 
 # 枚举和注解
 
@@ -8441,7 +8449,7 @@ public class exercisesArrayHomeWorkmethod2 {
 ### 二维数组部分
 
 1. ```java
-   //            int[][] arr = {{4,6},{1,4,5,7},{-2}};
+   //            int[][] arr = {{4,6},{1,4,5,7},{-2} };
    //          遍历数组,求和
    ```
 
