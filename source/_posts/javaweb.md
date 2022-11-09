@@ -24,6 +24,8 @@ pic:
 
 html是解释型的超文本标记语言，不区分大小写
 
+html是运行在浏览器上的,是由浏览器解析的
+
 **基础语法**:里面的标签大多都是成对出现的
 
 ```
@@ -33,6 +35,8 @@ html是解释型的超文本标记语言，不区分大小写
 </body>
 </html>
 ```
+
+
 
 过于简单，略
 
@@ -126,6 +130,9 @@ css从位置上的分类：嵌入式样式表，内部样式表，外部样式�
   #xxx{}
   ```
 
+  
+
+
 
 ## js
 
@@ -167,6 +174,15 @@ css从位置上的分类：嵌入式样式表，内部样式表，外部样式�
 </script>
 </html>
 ```
+
+### 书写语法
+
+> 1. 区分大小写:与java一样,变量名、函数名以及其他一切东西都区分大小写
+> 2. 每行结尾的分号可有可无
+> 3. 注释
+>    * 单行注释：// 注释内容
+>    * 多行注释：/\*注释内容\*/
+> 4. 大括号表示代码块
 
 ### JavaScript嵌入方式
 
@@ -262,11 +278,55 @@ css从位置上的分类：嵌入式样式表，内部样式表，外部样式�
 
     * 如果一个没有声明的变量，那么会在运行的时候报错
 
-      uncaught referenceError: b is not defined
+      `uncaught referenceError: b is not defined`
 
-    * 如果声明一个变量没有初始化，那么这个变量的值就是undefined
+    * 如果声明一个变量没有初始化，那么这个变量的值就是`undefined`
 
   * 变量的数据类型由后面赋的值决定
+
+* 使用typeof运算符可以获取数据类型
+
+  ```
+  alert(typeof xxx);
+  ```
+
+符号`==和===`的区别
+
+> ==
+>
+> 1. 判断是否一样,如果不一样,则进行类型转换
+> 2. 再去比较值
+>
+> ===
+>
+> 1. 判断是否一样,如果类型不一样,则直接返回false
+> 2. 再去比较其值
+>
+> 会不会类型转换的区别
+
+
+
+### 作用域
+
+>  var: 
+>
+> * 全局变量
+> * 可以重复声明
+> * 可以存放不同类型的值
+>
+> let:
+>
+> * 相对于var来说,只在所在的代码块有效
+> * 不允许重复声明
+>
+> const:
+>
+> * 用来声明一个只读的常量,
+> * 一旦声明,常量的值就不能改变
+
+
+
+
 
 ### 函数
 
@@ -407,6 +467,12 @@ JavaScript种没有『类』的概念，对于系统内置的
            obj2.study();
    ```
 
+**String对象**
+
+trim()方法:`去除字符换前后的两端字符`
+
+
+
 ### this**关键字**
 
 this关键字只有两种情况
@@ -439,6 +505,16 @@ this关键字只有两种情况
 ```
 
 ### 数组
+
+> 分两个格式
+>
+> 方式一
+>
+> > var arr = new Array(1,2,3,);
+>
+> 方式二
+>
+> ​	var arr =[1,2,33]; 
 
 1. 使用new关键字创建数组
 
@@ -487,6 +563,133 @@ this关键字只有两种情况
    var array2 = ["zhangsan","lisi","wangwu"];
    console.log(array2);
    ```
+
+### BOM
+
+Browser Object Model 浏览器对象模型
+
+javaScript将浏览器的各个组成部分封装为对象
+
+组成
+
+* window : 浏览器窗口对象
+
+  > 直接使用window对象,其中window可以省略
+  >
+  > ``` js
+  > window.alert("abc");
+  > ```
+  >
+  > 属性:获取其他BOM对象
+  >
+  > * history : 对history对象的只读引用
+  > * Navigator: 对Navigator对象的只读引用
+  > * Screen: 对Screen对象的只读引用
+  > * Location :  用于窗口的location对象
+  >
+  > 方法
+  >
+  > * `Alert() `警告框
+  > * `Confirm()`带有确认和取消的警告框
+  > * `setInterval()`在指定的周期(以毫秒计)来调用或计算表达式
+  > * `setTimeout()`在指定的毫秒数后调用函数或计算表达式
+
+* Navigator : 浏览器对象
+
+* Screen : 屏幕对象
+
+* History : 历史记录对象
+
+* Location : 地址栏对象
+
+
+
+### DOM
+
+> DOM是w3c的标准
+>
+> DOM定义了访问HTML和XML文档的标准
+>
+> ![image-20221109155710042](https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/image-20221109155710042.png)
+
+
+
+Document Object Model文档对象模型
+
+![image-20221109155311523](https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/image-20221109155311523.png)
+
+将标记语言的各个组成部分封装为对象
+
+* document:整个文档对象
+* Element ; 元素对象
+* Attribute : 属性对象
+* Text : 文本对虾干
+* Comment : 注释对象
+
+js可以通过DOM,对HTML进行操作
+
+* 改变HTML元素内容
+* 改变HTML元素的样式(css)
+* 对HTML DOM事件作出反应
+* 添加和删除HTML元素
+
+获取**Element**
+
+> 获取Element :元素对象
+>
+> 使用Document对象的方法来获取
+>
+> 1. getElementById : 根据id属性值来获取,返回一个Element对象
+> 2. getElementByTagName : 根据标签名获取,返回Element对象数组
+> 3. getElementByName: 根据name属性获取,返回Element对象数组
+> 4. getElementByClassName : 根据class属性值获取,返回Element对象数组
+>
+> 具体对标签操作的属性和方法,[参考文档](https://www.w3school.com.cn/jsref/dom_obj_document.asp)
+>
+> 通用元素
+>
+> * style  :设置元素css样式
+> * innerHTML : 设置元素内容
+
+### 事件监听
+
+> 事件:HTML事件就是发生在HTML元素上的"事情"
+>
+> 比如
+>
+> * 按钮被点击
+> * 鼠标移动到元素上
+> * 按下键盘按键
+>
+> JavaScript可以在事件被侦测到时<span style="color:red">执行代码</span>
+
+> **事件绑定**
+>
+> 方式一: 通过HTML标签中的事件属性进行绑定
+>
+> ```
+> <input type="button" onclick='on()'>
+> 
+> function on(){
+> 	alert("我被点了");
+> 	}
+> ```
+>
+> 方式二 : 通过DOM元素属性绑定
+>
+> ```
+> <input type="button" id="btn">
+> 
+> document.getElementById("btn").onclick = function(){
+> alert("我被点了");
+> }
+> ```
+>
+> 推荐使用方式二
+
+> [**常见事件**](https://www.w3school.com.cn/js/js_htmldom_events.asp)
+>
+> 参考文档
 
 # JSON
 
@@ -793,17 +996,17 @@ C/S:客户端服务器架构模式
 >            String resource = "mybatis-config.xml";
 >            InputStream inputStream = Resources.getResourceAsStream(resource);
 >            SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
->       
+>    
 >    //        获取sqlsession对象
 >            SqlSession sqlSession = sqlSessionFactory.openSession();
 >            List<user> user = sqlSession.selectList("test.selectAll");
 >            System.out.println(user);
 >        }
 >    }
->       
+>    
 >    ```
 >
->    
+> 
 
 ## mapper代理开发
 
@@ -954,12 +1157,12 @@ public class Author {
 }
 ```
 
-## 配置文件完成增删改
+### 其他
 
 > 参数占位符
->     1.#{}: 相当于preparestatement里sql的?,会替换成为?
->     2.${}:  拼接sql,会存在sql注入问题
->     使用时机:
+>  1.#{}: 相当于preparestatement里sql的?,会替换成为?
+>  2.${}:  拼接sql,会存在sql注入问题
+>  使用时机:
 >
 >    * 参数传递的时候用#{}
 >      或者列名不固定的情况下使用${}
@@ -974,16 +1177,16 @@ public class Author {
 > ```
 
 >特殊字符的处理
->    1.转义字符:比较少的情况下使用
->    2.CDATA区:字符比较多的情况下使用
+>1.转义字符:比较少的情况下使用
+>2.CDATA区:字符比较多的情况下使用
 >
 >```xml
 ><!--        例如小于符号,使用转义字符-->
->        select * from tb_brand where id &lt; #{id};
+>   select * from tb_brand where id &lt; #{id};
 >
 ><!--        使用cdata区,区内的会当成文本处理-->
 ><!--大写CD,弹出cd区-->
->        select * from tb_brand where id <![CDATA[  <  ]]> #{id};
+>   select * from tb_brand where id <![CDATA[  <  ]]> #{id};
 >```
 
 >多条件查询
@@ -1020,11 +1223,13 @@ public class Author {
 
 mybaitsX
 
-
-
-## 注解完成增删改
+## 配置文件完成增删改
 
 ## 动态sql
+
+### 查询
+
+**1、多条件动态查询**
 
 > 标签:if用于判断参数是否有值,使用test属性进行条件判断
 >
@@ -1032,46 +1237,333 @@ mybaitsX
 > * 解决方法:
 >   1. 使用恒等式`1=1`让所有条件格式都一样
 >   2. <kbd>\<where></kbd>标签替换where关键字
+>
+> ```xml
+> <select id="selectProductByinfo" resultMap="brandResultMap">
+> <!--        select * from tb_brand where status = #{states} and company_name like #{companyName} and brand_name like #{brandName};-->
+> <!--   动态条件查询-->
+> <!--        问题1:出现where后面和and中间缺少条件爆粗-->
+> <!--            解决1:在where条件后面价格恒等式1=1-->
+> <!--
+>             select * from tb_brand where 1=1
+>         <if test="states != null">
+>             and status = #{states}
+>         </if>
+>         <if test="companyName !=null and companyName!=''">
+>             and company_name like #{companyName}
+>         </if>
+>         <if test="brandName !=null and brandName!=''">
+>             and brand_name like #{brandName};
+>         </if>
+> -->
+> <!--     解决2:使用mybatis提供的<where>标签-->
+> <!--         where标签会自动识别并去掉and -->
+>         select * from tb_brand
+>         <where>
+>             <if test="states != null">
+>                 and status = #{states}
+>             </if>
+>             <if test="companyName !=null and companyName!=''">
+>                 and company_name like #{companyName}
+>             </if>
+>             <if test="brandName !=null and brandName!=''">
+>                 and brand_name like #{brandName};
+>             </if>
+>         </where>
+>     </select>
+> ```
+
+**2、单条件动态查询**
+
+> 从多条件中选择一个
+>
+> ![image-20221108154107638](https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/image-20221108154107638.png)
+>
+> mybatis提供了`chose(when,otherwise)`:选择,类似java中的switch语句
+>
+> **interface**
+>
+> ```java
+> List<Brand> selectBySingleCondition(Brand brand);
+> ```
+>
+> **mapper**
+>
+> 注意:#{}内的名字应该与实体类的字段名相同不然没法映射不到
+>
+> ```xml
+> <select id="selectBySingleCondition" resultMap="brandResultMap">
+>      select * from tb_brand 
+> <!--        where 使用where标签就可以省略以下otherwise标签(只针对本demo) -->
+>      <where>
+>          <choose><!--类似于switch-->
+>              <when test="status!=null"><!--    类似于case    -->
+>                   status = #{status}
+>              </when>
+>              <when test="companyName !=null and companyName!=''">
+>                   company_name like #{companyName}
+>              </when>
+>              <when test="randName !=null and randName!=''">
+>                   brand_name like #{randName};
+>              </when>
+>              <!--类似于default -->
+> <!--                <otherwise>-->
+> <!--                    1=1-->
+> <!--                </otherwise>-->
+>          </choose>
+>      </where>
+>  </select>
+> ```
+>
+> **测试**
+>
+> ```java
+> public void test4() throws IOException {
+>      Brand brand = new Brand();
+>      int id=0;
+>      String comName="";
+>      String brandName="";
+> 
+> 
+>      String resource="mybatis-config.xml";
+>      InputStream inputStream = Resources.getResourceAsStream(resource);
+>      SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+> 
+>      SqlSession sqlSession = sqlSessionFactory.openSession();
+>      BrandMapper mapper = sqlSession.getMapper(BrandMapper.class);
+> //        brand.setStatus(id);
+>      brand.setCompanyName(comName);
+>      brand.setRandName(brandName);
+> 
+>      List<Brand> brands = mapper.selectBySingleCondition(brand);
+> 
+>      for (Brand brand1 : brands) {
+>          System.out.println(brand1.getId()+"\t\t"+brand1.getRandName()+"\t\t"+brand1.getRandName());
+>      }
+> 
+>  }
+> ```
+
+### 添加
+
+**主键返回**
+
+案例:在数据添加成功后,需要插入数据库数据的主键
+
+注意事物提交
+
+> 实际需求比如:添加订单和订单项
+>
+> 1.添加订单
+>
+> 2.添加订单项,订单项种需要设置所属订单的id
+>
+> > 添加 void add(Brand brand);
+> >
+> > 参数:除了id的所有数据
+> >
+> > 结果:void
+> >
+> > 添加成功后返回主键id
+
+> 操作:
+>
+> 在insert标签种添加两项属性<kbd>useGeneratedKeys</kbd>和<kbd>keyColumn</kbd>
+>
+> 将设置为<kbd>useGeneratedKeys="true"</kbd>和<kbd>keyColumn="要返回的列名"</kbd>
+>
+> ```xml
+> <insert id="add" useGeneratedKeys="true" keyColumn="id">
+>      insert into tb_brand values(null,#{randName},#{companyName}
+>      ,#{ordered},#{description},#{status});
+>  </insert>
+> ```
+>
+> 此时执行该添加方法后会返回主键id
+
+### 修改
+
+**修改静态字段**
 
 ```java
-<select id="selectProductByinfo" resultMap="brandResultMap">
-<!--        select * from tb_brand where status = #{states} and company_name like #{companyName} and brand_name like #{brandName};-->
-<!--   动态条件查询-->
-<!--        问题1:出现where后面和and中间缺少条件爆粗-->
-<!--            解决1:在where条件后面价格恒等式1=1-->
-<!--
-            select * from tb_brand where 1=1
-        <if test="states != null">
-            and status = #{states}
-        </if>
-        <if test="companyName !=null and companyName!=''">
-            and company_name like #{companyName}
-        </if>
-        <if test="brandName !=null and brandName!=''">
-            and brand_name like #{brandName};
-        </if>
--->
-<!--     解决2:使用mybatis提供的<where>标签-->
-<!--         where标签会自动识别并去掉and -->
-        select * from tb_brand
-        <where>
-            <if test="states != null">
-                and status = #{states}
-            </if>
-            <if test="companyName !=null and companyName!=''">
-                and company_name like #{companyName}
-            </if>
-            <if test="brandName !=null and brandName!=''">
-                and brand_name like #{brandName};
-            </if>
-        </where>
-    </select>
+ int update(Brand brand);
 ```
 
+```xml
+<update id="update">
+
+        update tb_brand set brand_name=#{randName},company_name=#{companyName},ordered=#{ordered},description=#{description},status=#{status} where id=#{id};
+    </update>
+```
+
+**修改动态字段**
+
+> 参数:部分数据,封装在对象中
+>
+> 结果:void
+>
+> \<set>标签
+
+```xml
+<update id="update2">
+        update tb_brand
+        <set>
+            <if test="randName!=null and randName!=''">
+                brand_name=#{randName},
+            </if>
+            <if test="companyName!=null and companyName!=''">
+                company_name=#{companyName},
+            </if>
+            <if test="ordered!=null and ordered!=''">
+                ordered=#{ordered},
+            </if>
+            <if test="description!=null and description!=''">
+                description=#{description},
+            </if>
+            <if test="status!=null and status!=''">
+                status=#{status}
+            </if>
+        </set>
+        where  id =#{id};
+    </update>
+```
+
+### 删除
+
+**单数据删除**
+
+> 参数:id
+>
+> 结果:viod
+
+```xml
+<delete id="deleteById">
+        delete from tb_brand where id=#{id};
+    </delete>
+```
+
+**批量删除**
+
+> ``` java
+>  void deleteMoreById(@Param("ids")int[] ids);
+> ```
+>
+> ```xml
+> <delete id="deleteMoreById">
+> <!--        delete from tb_brand where id in(?,?,?)-->
+>         delete from tb_brand where
+>         id in
+> <!--        myabtis会将数组 封装成为一个map集合
+>              *默认:key为array = 数组
+>              * 使用@Param注解改变map集合的默认key的名称
+>             -->
+> <!--     collection要遍历的数组,item:对应的字段 separator分隔符多个id时中间用separator分隔
+>            open开始时前面拼, close结束后拼接-->
+>         <foreach collection="ids" item="id" separator="," open="(" close= ")">
+>             #{id}
+>         </foreach>
+> ```
+>
+> 
+
+## mybatis参数传递
+
+> mybatis接口方法中可以接收各种各样的参数,Mybatis底层对这些参数进行不同的封装处理方式
+>
+> 单个参数
+>
+> * **pojo类型**:直接使用,属性名和参数占位符名称一致
+>
+> * **Map集合**: 直接使用, 键名和参数占位符一致
+>
+> * **Collection**: 封装为map集合
+>
+>   map.put("arg0",collection集合);
+>
+>   map.put("Collection",collection集合);
+>
+> * **List**:封装为map集合
+>
+>   map.put("arg0",list集合);
+>
+>   map.put("collection",list集合);
+>
+>   map.put("list",list集合);
+>
+> * **Array**:封装为map集合
+>
+>   map.put("arg0",数组);
+>
+>   map.put("array",数组);
+>
+> * 其他:直接使用
+>
+> 多个参数
+>
+> ```java
+> //这里的param需要个xml中#{}的名字相同,不然会映射不到
+> User select(@Param("username")String username,@Param("password")String password);
+> ```
+>
+> ```xml
+> <select id="select" resultType="user">
+> select * from tb_brand where
+> username=#{username} and password=#{password};
+> </select>
+> ```
+>
+> * 封装为Map集合
+>
+>   ```java
+>   map.put("arg0",参数值1);
+>   map.put("param1",参数值1);
+>   map.put("arg1",参数值2);
+>   map.put("param2",参数值2);
+>   ```
+>
+> Mybatis提供了ParamNameResolver类来进行封装
+>
+> > mybatis会将多个参数封装为map集合,默认的key为arg或param,所以不使用@param注解来修改key的名字的话,需要吧#{}内的名字改写成arg0或param.可读性低
+> >
+> > 建议:将来都使用@Param注解来修改Map集合中的默认键名,并使用修改后的名称来获取值.这样可读性更高
+> >
+> > 
 
 
 
+## 注意事项
 
+>mybatis事物
+>
+>* openSession();
+>
+> 默认开启事物,进行增删改操作后需要使用sqlSession.commit();手动提交事物
+>
+>* openSession(true); 
+>
+> 可以设置为自动提交事物(关闭事物)
 
+> 增删改可以设置返回int类型(影响到行数)
+
+## 注解完成增删改
+
+使用注解开发会比配置文件更方便
+
+```java
+    @Select("select * from tb_brand where id=#{id}")
+    @ResultMap("brandResultMap") //配置文件里配置的brandResultMap
+    Brand selectIdBrand(int id);
+```
+
+> * 查询:@(Select)
+> * 添加:@(Insert)
+> * 修改:@(Update)
+> * 删除:@(Delete)
+>
+> 提示:
+>
+> * 注解完成简单的功能
+> * 配置文件完成复杂的功能
 
 # servlet
+
