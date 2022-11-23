@@ -1,7 +1,7 @@
 # Global 全局配置
 site_analytics: ''
 hoster: <a href="https://github.io" target="_blank">Github Pages</a>
-site_logo: https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/ninoLOG.png
+site_logo: https://ninos-img.oss-cn-shanghai.aliyuncs.com/img/ninoLOG.png
 snow: false
 click_animate_js: 'candy'
 enable_dark: true
@@ -48,7 +48,7 @@ vendors:
 # 自定义样式
 customStyles:
   images: # 图片相关设置
-    banner: https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/wxjb.webp # 站点横幅
+    banner: https://ninos-img.oss-cn-shanghai.aliyuncs.com/img/wxjb.webp # 站点横幅
     background: /images/bg.webp # 站点背景
 
 # Index 首页配置
@@ -180,7 +180,7 @@ widgets:
 - category
 - tagcloud
 - posts
-avatarUri: https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/logo.webp
+avatarUri: https://ninos-img.oss-cn-shanghai.aliyuncs.com/img/logo.webp
 mobile_toc: 
   hide: false
   hide_id: false
